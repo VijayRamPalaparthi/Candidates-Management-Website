@@ -1,0 +1,7 @@
+.search-input{
+    padding: 5px;
+    min-width: 300px;
+    outline: none;
+    border: 1.5px solid skyblue;
+    border-radius: 5px;
+}

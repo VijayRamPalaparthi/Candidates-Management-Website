@@ -1,0 +1,15 @@
+.filter-selection{
+    padding: 5px;
+    margin-left: 10px;
+    border:1px solid orange;
+    outline: none;
+}
+.filter-button{
+    padding: 7px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+}
