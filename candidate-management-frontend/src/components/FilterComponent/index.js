@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { MdOutlineFilterAlt } from "react-icons/md";
 import "./index.css"
 
 function FilterComponent({ setFilters }) {
   const [gender, setGender] = useState('');
   const [experience, setExperience] = useState('');
   const [skills, setSkills] = useState('');
+  const [isShow, changeShowStatus] = useState(true)
 
   const applyFilters = () => {
     setFilters({ gender, experience, skills });
+    changeShowStatus(true)
   };
 
   const clearFilters=()=>{
@@ -15,10 +18,14 @@ function FilterComponent({ setFilters }) {
     setExperience("")
     setSkills("")
     setFilters({});
+    changeShowStatus(false)
   }
 
   return (
+   
     <div>
+      {isShow ?<div className='filter-icon' onClick={clearFilters}> <MdOutlineFilterAlt  size={25} color='skyblue'/> </div>: 
+      ( <>
       <select value={gender} className='filter-selection' onChange={(e) => setGender(e.target.value)}>
         <option value="">Filter by Gender</option>
         <option value="Male">Male</option>
@@ -40,7 +47,10 @@ function FilterComponent({ setFilters }) {
       />
       <button className='filter-button' onClick={applyFilters}>Apply Filters</button>
       <button className='filter-button' onClick={clearFilters}>Clear Filter</button>
+    </>)}
     </div>
+  
+    
   );
 }
 

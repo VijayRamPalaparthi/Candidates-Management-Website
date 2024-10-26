@@ -1,7 +1,13 @@
 .search-input{
     padding: 5px;
-    min-width: 300px;
     outline: none;
+    border:none;   
+}
+.input-search-container{
+    display: flex;
+    align-items: center;
     border: 1.5px solid skyblue;
+    padding-left: 10px;
     border-radius: 5px;
+    min-width: 300px;
 }

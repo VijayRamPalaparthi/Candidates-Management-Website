@@ -1,15 +1,17 @@
 import React from 'react';
+import { FaRegArrowAltCircleLeft,FaRegArrowAltCircleRight } from "react-icons/fa";
 import "./index.css"
 
 function Pagination({ page, setPage, totalPages }) {
   return (
-    <div>
+    <div className='paginate-container'>
+      <span> {page}/{totalPages} </span>
       <button className='pagination-button' disabled={page === 1} onClick={() => setPage(page - 1)}>
-        Previous
+        <FaRegArrowAltCircleLeft size={20}/>
       </button>
-      <span> {page} of {totalPages} </span>
+      
       <button className='pagination-button' disabled={page === totalPages} onClick={() => setPage(page + 1)}>
-        Next
+        <FaRegArrowAltCircleRight size={20}/>
       </button>
     </div>
   );

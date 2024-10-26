@@ -13,3 +13,12 @@
     border-style: none;
     cursor: pointer;
 }
+.filter-icon{
+    border: 1px solid rgb(146, 145, 145);
+    border-radius: 2px;
+    margin-left: 20px;
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}

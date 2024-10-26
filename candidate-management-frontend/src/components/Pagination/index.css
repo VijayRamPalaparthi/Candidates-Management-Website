@@ -1,7 +1,13 @@
 .pagination-button{
-    border: 1px solid yellowgreen;
-    color: orange;
-    padding: 5px;
+    color: skyblue;
     border-radius: 5px;
-    width: 60px;
+    border: none;
+    margin-left: 10px;
+    border: 1px solid grey;
+    cursor: pointer;
+    
+}
+.paginate-container{
+    display: flex;
+    align-items: center;
 }

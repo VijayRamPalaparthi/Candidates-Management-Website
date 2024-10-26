@@ -13,6 +13,7 @@ function App() {
   const [filters, setFilters] = useState({});
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetchCandidates();
@@ -28,14 +29,25 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='heading'>Candidate Management</h1>
+      <div className='head1-container'>
+        <h3>Candidate</h3>
+        <button className='add-button' onClick={() => setIsModalOpen(true)}>Add</button>
+      </div>
       <div className='filter-container'>
         <SearchBar setSearch={setSearch} />
+        <div className='head2-container'>
+        <Pagination page={page} setPage={setPage} totalPages={totalPages} />
         <FilterComponent setFilters={setFilters} />
+        </div>
       </div>
-      <AddCandidateForm fetchCandidates={fetchCandidates} />
-      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
+      
       <CandidateTable candidates={candidates} />
+      {isModalOpen && (
+        <AddCandidateForm 
+          fetchCandidates={fetchCandidates}
+          closeModal={() => setIsModalOpen(false)} // Close modal function
+        />
+      )}
       
     </div>
   );
