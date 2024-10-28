@@ -15,7 +15,8 @@ const seedCandidates = async () => {
     await Candidate.deleteMany({});
     await Candidate.insertMany([
       { name: "Vijay Ram", phone: "8247251035", email: "vijayram@example.com", gender: "Male", experience: "2 Years", skills: ["JavaScript", "React"] },
-      { name: "Krish", phone: "9959096432", email: "mary@example.com", gender: "Female", experience: "1 Year", skills: ["HTML", "CSS", "JavaScript"] }
+      { name: "Krish", phone: "9959096432", email: "krishna@example.com", gender: "Female", experience: "1 Year", skills: ["HTML", "CSS", "JavaScript"] },
+      { name: "Ram", phone: "9247251035", email: "ram@example.com", gender: "Male", experience: "1 Years", skills: ["Python", "React", "Express"] },
     ]);
     console.log("Database seeded!");
     mongoose.connection.close();
